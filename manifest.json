@@ -1,0 +1,66 @@
+{
+  "manifest_version": 3,
+  "name": "Rings Wallet",
+  "version": "0.1.0",
+  "description": "A Solana wallet with a private balance built in: send, receive and swap privately, and use any Solana app.",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuT137WPACWAYVbKCQBHtkYx0Cr/CfZAX0Us+/0AJ5RnFzaq5HvZf7jAgXMwiwCx0i42TazZ75eSck4IQrZcCtqCzmJVI5H+jlSQY0XMkB+cVCmbd0Kn86ptRt71o50XnLJ4NtOsj04ZH9qPVPjhn9o27NfdlGe/TgGPfb/O13nxRrl/fZmXKDkZzn1JwF1XxB0UVKvy0FNZdGBbPpGe5gtPAlVrsgmigze8zYJocAQtE+yVRclYwxkDG2ySRqJXd/4/OMiK+kkRdknBlPRvhicex6f7C7o9ncdD7ymT5MOAFy8JDGP3WjH3hKG/DpHTlkDyYEnnnGqx7nYeFxKjdXwIDAQAB",
+  "minimum_chrome_version": "140",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Rings Wallet",
+    "default_icon": {
+      "16": "icons/16.png",
+      "32": "icons/32.png",
+      "48": "icons/48.png",
+      "128": "icons/128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/16.png",
+    "32": "icons/32.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "permissions": [
+    "storage",
+    "alarms"
+  ],
+  "host_permissions": [
+    "https://rings.run/*",
+    "http://localhost/*",
+    "http://*.localhost/*",
+    "https://api.mainnet-beta.solana.com/*",
+    "https://api.devnet.solana.com/*",
+    "https://lite-api.jup.ag/*"
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*/*",
+        "http://*/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://*/*",
+        "http://*/*"
+      ],
+      "js": [
+        "inject.js"
+      ],
+      "run_at": "document_start",
+      "world": "MAIN"
+    }
+  ]
+}

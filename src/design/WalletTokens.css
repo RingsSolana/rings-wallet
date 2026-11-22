@@ -1,0 +1,29 @@
+/* Self-hosted (the export linked Google Fonts; Rings serves no third-party assets). */
+@font-face{font-family:'Archivo';font-style:normal;font-weight:100 900;font-stretch:62% 125%;font-display:swap;src:url(/fonts/archivo-var-latin.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/plex-mono-400-latin.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/plex-mono-500-latin.woff2) format('woff2')}
+/* helmet */
+
+@font-face{font-family:'RW Archivo';src:url(/fonts/archivo-var-latin.woff2) format('woff2');font-weight:100 900;font-stretch:62% 125%;font-display:swap}
+@font-face{font-family:'RW Plex';src:url(/fonts/plex-mono-400-latin.woff2) format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'RW Plex';src:url(/fonts/plex-mono-500-latin.woff2) format('woff2');font-weight:500;font-display:swap}
+:root{--black:#0E0E0E;--sheet:#161616;--inset:#1D1D1D;--rule:#2A2A2A;--bone:#F3F1EC;--grey:#A6A29B;--grey-3:#6E6B66;--ember:#E84125;--ember-hover:#FF5A3C;--ember-tint:rgba(232,65,37,.1);--open:#E3B341;--open-tint:rgba(227,179,65,.1);--up:#4FD69C;--up-tint:rgba(79,214,156,.1);--down:#FF7A6B;--down-tint:rgba(255,122,107,.1);--danger:#FF7A6B;--ease-in:cubic-bezier(0.16,1,0.3,1);--ease-press:cubic-bezier(0.4,0,0.2,1);--ease-state:cubic-bezier(0.4,0,0.2,1)}
+html,body{margin:0;background:#0E0E0E;color:#F3F1EC}
+body{font-family:'RW Archivo',Archivo,sans-serif;font-size:15px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+*{box-sizing:border-box;scrollbar-width:none}
+*::-webkit-scrollbar{display:none}
+a{color:#F3F1EC;text-decoration:none}
+a:hover{color:#FF5A3C}
+button,input{font:inherit}
+input::placeholder{color:#6E6B66}
+input:focus-visible{outline:none}
+:focus-visible{outline:2px solid #E84125;outline-offset:2px}
+::selection{background:#E84125;color:#0E0E0E}
+input[type=search]::-webkit-search-cancel-button{display:none}
+@keyframes rw-shimmer{0%{background-position:-240px 0}100%{background-position:240px 0}}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+
+/* hover / active / focus styles from style-hover, style-active, style-focus */
+.dc-wallettokens-1:hover{color:var(--bone) !important;border-color:var(--grey) !important}
+.dc-wallettokens-2:focus-visible{border-color:#E84125 !important;box-shadow:inset 0 2px 4px rgba(0,0,0,0.7), 0 0 0 3px rgba(232,65,37,0.16) !important}
+.dc-wallettokens-3:hover{background:var(--sheet) !important}

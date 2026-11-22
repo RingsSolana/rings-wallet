@@ -1,0 +1,6 @@
+.devdata/
+node_modules/
+dist/
+release/
+release.json
+*.zip
